@@ -1,25 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import Cookie from "js-cookie";
 
 const Login = () => {
+  const url = "https://wylo-backend.onrender.com";
   const [showSignup, setShowSignup] = useState(false);
   const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const onChangeHandler = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    console.log(value);
-    console.log(name);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-    setData((data) => ({ ...data, [name]: value }));
+  useEffect(() => {
+    // Check if user is logged in (has token) when component mounts
+    const token = Cookie.get("token");
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const onChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const onLogin = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const endpoint = showSignup ? "register" : "login";
+    const newUrl = `${url}/api/user/${endpoint}`;
+
+    try {
+      const response = await axios.post(newUrl, data);
+
+      if (response.data.success) {
+        const { token } = response.data;
+        Cookie.set("token", token, { expires: 7 });
+        navigate("/");
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error(
+        "An error occurred during the login/register process:",
+        error
+      );
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="login-container">
-      <form className="login-form">
+      <form className="login-form" onSubmit={onLogin}>
         <div>
           {showSignup && (
             <>
@@ -37,8 +79,8 @@ const Login = () => {
           <input
             type="text"
             placeholder="Email"
-            value={data.email}
             name="email"
+            value={data.email}
             onChange={onChangeHandler}
             required
           />
@@ -47,7 +89,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
             name="password"
-            value={data.value}
+            value={data.password}
             onChange={onChangeHandler}
             required
           />
@@ -69,8 +111,8 @@ const Login = () => {
             </button>
           </div>
           <div className="submit-button-container">
-            <button type="submit" className="submit-button">
-              {showSignup ? "Sign Up" : "Login"}
+            <button type="submit" className="submit-button" disabled={loading}>
+              {loading ? "Loading..." : showSignup ? "Sign Up" : "Login"}
             </button>
           </div>
         </div>
