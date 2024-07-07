@@ -77,7 +77,7 @@ const Posts = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            cols={45}
+            cols={35}
             placeholder="Enter the text here"
             value={postContent}
             onChange={onInputChange}
@@ -119,7 +119,7 @@ const Posts = () => {
                     <textarea
                       value={post.text}
                       className="changetext-input"
-                      cols={35}
+                      cols={28}
                       onChange={(e) =>
                         onChangePostContent(post.id, e.target.value)
                       }

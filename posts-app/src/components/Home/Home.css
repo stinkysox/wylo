@@ -82,4 +82,9 @@
     font-size: 14px;
     padding: 10px;
   }
+
+  .option-selection {
+    width: 150px;
+    height: 150px;
+  }
 }

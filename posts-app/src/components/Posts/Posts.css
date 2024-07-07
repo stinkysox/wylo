@@ -169,12 +169,12 @@
 .no-posts {
   margin-top: 60px;
   border-radius: 10px;
-  width: 300px;
+  width: 270px;
 }
 
 @media (max-width: 500px) {
   .post-item {
-    width: 300px;
+    width: 260px;
   }
 
   .post-item p {
