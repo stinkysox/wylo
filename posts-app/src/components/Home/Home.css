@@ -76,10 +76,10 @@
   padding: 10px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 460px) {
   .about {
     width: 100%;
-    font-size: 14px;
+    font-size: 11px;
     padding: 10px;
   }
 

@@ -172,9 +172,9 @@
   width: 270px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 460px) {
   .post-item {
-    width: 260px;
+    width: 220px;
   }
 
   .post-item p {
