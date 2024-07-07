@@ -77,7 +77,7 @@ const Posts = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            cols={30}
+            cols={20}
             placeholder="Enter the text here"
             value={postContent}
             onChange={onInputChange}
