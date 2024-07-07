@@ -1,0 +1,184 @@
+.posts {
+  background-color: #fbf6e2;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.input-section {
+  height: 40vh;
+  background-color: #304463;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-section button {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  font-family: "Bodoni Moda", serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-item {
+  position: relative;
+  background: rgba(219, 181, 181, 0.2);
+  backdrop-filter: blur(10px);
+  margin: 10px;
+  border-radius: 10px;
+  width: 400px;
+  height: 250px;
+  font-family: "Poppins";
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-item p {
+  margin: 5px 5px;
+  font-family: "Poppins";
+  font-weight: normal;
+}
+
+.input-section textarea {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: "Poppins";
+  font-size: 10px;
+  min-height: 100px;
+  outline: none;
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+}
+
+.changetext-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: "Poppins";
+  font-size: 10px;
+  min-height: 100px;
+  outline: none;
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+  margin-bottom: 0px;
+}
+
+.input-section textarea:focus {
+  border-color: #5c6ac4;
+}
+
+.delete-btn {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  background: rgba(255, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 50%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.4);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.edit-btn {
+  padding: 10px 10px;
+  background: rgba(0, 128, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 128, 0, 0.3);
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: rgba(0, 128, 0, 0.4);
+  border: 1px solid rgba(0, 128, 0, 0.5);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.save-button {
+  padding: 10px 10px;
+  background: rgba(0, 0, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 255, 0.3);
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.save-button:hover {
+  background: rgba(0, 0, 255, 0.4);
+  border: 1px solid rgba(0, 0, 255, 0.5);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.no-posts {
+  margin-top: 60px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+@media (max-width: 500px) {
+  .post-item {
+    width: 300px;
+  }
+
+  .post-item p {
+    font-family: "Poppins";
+    font-weight: normal;
+  }
+}

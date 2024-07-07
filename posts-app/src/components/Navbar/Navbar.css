@@ -1,0 +1,13 @@
+.home-navbar {
+  background-color: #000000;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Bodoni Moda SC", serif !important;
+  padding: 10px;
+}
+
+p {
+  font-family: "Bodoni Moda", serif;
+  font-weight: 500;
+}
