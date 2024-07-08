@@ -119,7 +119,7 @@ const Posts = () => {
                     <textarea
                       value={post.text}
                       className="changetext-input"
-                      cols={24}
+                      cols={20}
                       onChange={(e) =>
                         onChangePostContent(post.id, e.target.value)
                       }

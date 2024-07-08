@@ -1,6 +1,6 @@
 .home {
   background-color: #973131;
-  height: 100vh;
+  height: 88vh;
   display: flex;
   justify-content: space-between;
 }
@@ -79,12 +79,13 @@
 @media (max-width: 460px) {
   .about {
     width: 100%;
-    font-size: 11px;
+    font-size: 12px;
     padding: 10px;
   }
 
   .option-selection {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    margin-top: 40%;
   }
 }
